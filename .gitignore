@@ -1,0 +1,38 @@
+# Dependencies and build output
+node_modules/
+dist/
+.vite/
+
+# Local environment and generated agent ID
+.env
+.env.*
+!.env.example
+!.env.*.example
+.agent-id
+
+# Python virtual environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Logs and test coverage
+*.log
+coverage/
+.nyc_output/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local editor and operating-system files
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini

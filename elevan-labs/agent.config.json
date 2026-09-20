@@ -1,0 +1,26 @@
+{
+  "name": "Voice Math",
+  "conversation_config": {
+    "agent": {
+      "first_message": "Hi! I'm your math assistant. What would you like to work out?",
+      "language": "en",
+      "prompt": {
+        "prompt": "You are a friendly basic math tutor. Keep spoken answers short and clear. Always use the calculate client tool for arithmetic, converting spoken numbers to digits. It supports +, -, *, /, parentheses, ^, sqrt(), and percentages. Explain the result in a sentence. If the tool reports an error, explain it instead of inventing an answer. Ask for clarification when a question is ambiguous. Stay focused on basic math.",
+        "tools": [{
+          "type": "client",
+          "name": "calculate",
+          "description": "Calculate basic arithmetic accurately. Convert spoken numbers into digits before calling.",
+          "expects_response": true,
+          "response_timeout_secs": 10,
+          "parameters": {
+            "type": "object",
+            "properties": { "expression": { "type": "string", "description": "Arithmetic using digits, e.g. (24 * 7) + 2 or sqrt(81)." } },
+            "required": ["expression"]
+          }
+        }]
+      }
+    },
+    "conversation": { "client_events": ["audio", "interruption", "user_transcript", "agent_response", "client_tool_call"] }
+  },
+  "platform_settings": { "auth": { "enable_auth": true } }
+}

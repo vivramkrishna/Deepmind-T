@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Voice Math · ElevenLabs",
+  "version": "1.0.0",
+  "description": "Send selected math questions to your local voice agent.",
+  "permissions": ["contextMenus"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_title": "Open Voice Math" },
+  "commands": { "_execute_action": { "suggested_key": { "default": "Alt+Shift+M" }, "description": "Open Voice Math" } }
+}

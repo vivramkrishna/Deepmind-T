@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#132c30"><title>Voice Math · ElevenLabs Agent</title></head>
+<body><div class="shell"><header><a class="brand" href="/">∥ <span>Voice Math</span></a><span class="badge" id="connection">Checking connection…</span></header>
+<main><nav aria-label="Breadcrumb">Your App <span>→</span> ElevenLabs Voice Agent <span>→</span> conversation</nav>
+<div class="layout"><section class="voice-panel"><div class="eyebrow">A LITTLE HELP WITH NUMBERS</div><h1>Let’s work<br>it out.</h1><p>Ask a question. Talk through the answer.<br>Make the numbers make sense.</p>
+<div class="voice-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+<p id="voice-status" role="status">Ready when you are</p><button class="primary" id="start" disabled>Start voice conversation</button><button id="mute" hidden>Mute microphone</button><p class="small" id="voice-note">Microphone access is requested when you start.</p>
+<div class="capabilities"><span>+ Addition</span><span>− Subtraction</span><span>× Multiplication</span><span>÷ Division</span></div></section>
+<section class="chat-panel" aria-label="Conversation"><div class="chat-heading"><div><h2>Conversation</h2><p>One question at a time.</p></div><button id="clear" class="text-button">Clear</button></div>
+<div id="messages" role="log" aria-live="polite"><div class="message assistant"><span>VOICE MATH</span><p>Hello! Type a math question below, or start a voice conversation.</p></div></div>
+<div class="examples"><button data-question="What is 24 times 7?">24 × 7</button><button data-question="15% of 200">15% of 200</button><button data-question="sqrt(81)">√81</button></div>
+<form id="question-form"><label class="sr-only" for="question">Your math question</label><input id="question" placeholder="Ask a math question…" maxlength="250" autocomplete="off" required><button type="submit" aria-label="Send question">↑</button></form><p class="small footnote">Demo math works now. Connect ElevenLabs to talk.</p></section></div></main><footer><span>Powered by ElevenLabs when connected</span><span>VOICE MATH / 01</span></footer></div><script type="module" src="/src/main.js"></script></body></html>

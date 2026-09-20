@@ -1,0 +1,17 @@
+{
+  "name": "elevenlabs-math-voice-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node server/index.js",
+    "build": "vite build",
+    "start": "node server/index.js --production",
+    "test": "node --test",
+    "setup": "node scripts/setup.js",
+    "agent:setup": "node scripts/create-agent.js"
+  },
+  "dependencies": { "@elevenlabs/client": "latest", "dotenv": "latest", "express": "latest", "mathjs": "latest" },
+  "devDependencies": { "vite": "latest" }
+}
