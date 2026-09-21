@@ -1,0 +1,9 @@
+node_modules
+.next
+.env
+.env.local
+data/conversations.json
+data/recordings/*
+!data/recordings/.gitkeep
+voice-agent/.venv
+voice-agent/__pycache__

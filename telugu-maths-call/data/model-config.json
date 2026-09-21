@@ -1,0 +1,9 @@
+{
+  "order": [
+    "groq-gpt-oss",
+    "groq-qwen",
+    "gemini",
+    "openrouter"
+  ],
+  "updatedAt": "2026-09-21T10:59:04.523Z"
+}

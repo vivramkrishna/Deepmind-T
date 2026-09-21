@@ -1,0 +1,34 @@
+{
+  "name": "telugu-maths-call",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:migrate": "node --env-file=.env.local scripts/apply-supabase.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@livekit/components-react": "latest",
+    "@livekit/components-styles": "latest",
+    "@livekit/protocol": "^1.52.0",
+    "jose": "latest",
+    "katex": "latest",
+    "livekit-client": "latest",
+    "livekit-server-sdk": "latest",
+    "lucide-react": "latest",
+    "next": "latest",
+    "postgres": "^3.4.9",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/katex": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  }
+}
