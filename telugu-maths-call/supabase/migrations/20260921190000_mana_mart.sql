@@ -40,6 +40,7 @@ create table if not exists public.orders (
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
+alter table public.orders add column if not exists delivery_address text not null default '';
 create table if not exists public.order_items (
   id bigint generated always as identity primary key,
   order_id text not null references public.orders(id) on delete cascade,
@@ -89,12 +90,14 @@ begin
   update carts set updated_at=now() where id=p_cart_id;
 end; $$;
 
-create or replace function public.place_shop_order(p_cart_id text, p_fulfillment text, p_payment_method text)
+drop function if exists public.place_shop_order(text,text,text);
+create or replace function public.place_shop_order(p_cart_id text, p_fulfillment text, p_payment_method text, p_address text default '')
 returns text language plpgsql security definer set search_path=public as $$
 declare new_id text := 'MM-' || upper(substr(md5(random()::text || clock_timestamp()::text),1,10)); subtotal integer; delivery integer;
 declare line record;
 begin
   if p_fulfillment not in ('delivery','pickup') or p_payment_method not in ('cod','online') then raise exception 'INVALID_CHECKOUT'; end if;
+  if p_fulfillment='delivery' and trim(coalesce(p_address,''))='' then raise exception 'DELIVERY_ADDRESS_REQUIRED'; end if;
   select coalesce(sum(ci.quantity*p.price_paise),0) into subtotal from cart_items ci join products p on p.id=ci.product_id where ci.cart_id=p_cart_id;
   if subtotal=0 then raise exception 'CART_EMPTY'; end if;
   for line in select ci.product_id,ci.quantity,p.stock,p.name,p.variant,p.price_paise from cart_items ci join products p on p.id=ci.product_id where ci.cart_id=p_cart_id for update of p loop
@@ -103,8 +106,8 @@ begin
     insert into inventory_movements(product_id,delta,reason,reference_id) values(line.product_id,-line.quantity,'order',new_id);
   end loop;
   delivery := case when p_fulfillment='delivery' and subtotal<50000 then 4000 else 0 end;
-  insert into orders(id,cart_id,fulfillment,payment_method,payment_status,subtotal_paise,delivery_paise,total_paise)
-    values(new_id,p_cart_id,p_fulfillment,p_payment_method,case when p_payment_method='cod' then 'cod_pending' else 'payment_link_pending' end,subtotal,delivery,subtotal+delivery);
+  insert into orders(id,cart_id,fulfillment,payment_method,payment_status,subtotal_paise,delivery_paise,total_paise,delivery_address)
+    values(new_id,p_cart_id,p_fulfillment,p_payment_method,case when p_payment_method='cod' then 'cod_pending' else 'payment_link_pending' end,subtotal,delivery,subtotal+delivery,case when p_fulfillment='delivery' then trim(p_address) else '' end);
   insert into order_items(order_id,product_id,name,variant,quantity,price_paise)
     select new_id,ci.product_id,p.name,p.variant,ci.quantity,p.price_paise from cart_items ci join products p on p.id=ci.product_id where ci.cart_id=p_cart_id;
   update carts set status='ordered',updated_at=now() where id=p_cart_id;
@@ -114,13 +117,13 @@ end; $$;
 revoke all on table public.products, public.carts, public.cart_items, public.orders, public.order_items, public.inventory_movements from anon, authenticated;
 revoke execute on function public.search_shop_products(text) from public, anon, authenticated;
 revoke execute on function public.set_shop_cart_item(text,bigint,integer) from public, anon, authenticated;
-revoke execute on function public.place_shop_order(text,text,text) from public, anon, authenticated;
+revoke execute on function public.place_shop_order(text,text,text,text) from public, anon, authenticated;
 grant usage on schema public to service_role;
 grant all on table public.products, public.carts, public.cart_items, public.orders, public.order_items, public.inventory_movements to service_role;
 grant usage, select on sequence public.products_id_seq, public.order_items_id_seq, public.inventory_movements_id_seq to service_role;
 grant execute on function public.search_shop_products(text) to service_role;
 grant execute on function public.set_shop_cart_item(text,bigint,integer) to service_role;
-grant execute on function public.place_shop_order(text,text,text) to service_role;
+grant execute on function public.place_shop_order(text,text,text,text) to service_role;
 
 insert into public.products(name,brand,category,variant,unit,price_paise,stock,low_stock_at,aliases,image_url) values
 ('Colgate Strong Teeth','Colgate','Toothpaste','100 g','tube',6800,24,5,'coldgate,కోల్గేట్,कोलगेट,tooth paste','https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=400&q=80'),

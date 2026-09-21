@@ -1,12 +1,12 @@
 # Mana Mart — Multilingual Voice Shop Assistant
 
-An installable PWA that feels like a phone call. Customers speak naturally in Telugu, Hindi, or English; LiveKit carries the audio, Sarvam handles speech, and a configurable LLM searches live inventory and manages a cart. A password-protected dashboard manages products, stock, orders, model selection, and conversations.
+An installable PWA that feels like a phone call. Customers speak naturally in Telugu, Hindi, or English; LiveKit carries the audio, while Sarvam handles speech and conversation intelligence. A password-protected dashboard manages products, stock, orders, and conversations.
 
 ## What is included
 
 - Mobile-first, phone-call user interface
 - Telugu/Hindi/English Sarvam STT and TTS configuration
-- Gemini, Groq, and OpenRouter LLM failover with shop search, cart, and checkout tools
+- One Sarvam stack for STT, conversational intelligence, and TTS, with shop search, cart, and checkout tools
 - Guest use: no student account or sign-in
 - Explicit recording consent before microphone access
 - Password-protected admin conversation dashboard
@@ -75,19 +75,15 @@ python agent.py download-files
 python agent.py dev
 ```
 
-Fill `voice-agent/.env` with the same LiveKit credentials plus `SARVAM_API_KEY` and at least one LLM key: `GOOGLE_API_KEY`, `GROQ_API_KEY`, or `OPENROUTER_API_KEY`. Keep `APP_WEBHOOK_SECRET` identical in the web app and agent environment files.
+Fill `voice-agent/.env` with the same LiveKit credentials plus `SARVAM_API_KEY`. Keep `APP_WEBHOOK_SECRET` identical in the web app and agent environment files.
 
 The current provider choices are:
 
-- Sarvam Saaras v4 STT, Telugu code-mix mode
-- Automatic LLM fallback in `LLM_PROVIDER_ORDER`
-- Gemini 3.7 Flash (`gemini-3.7-flash`)
-- Groq GPT-OSS 120B (`openai/gpt-oss-120b`)
-- Groq Qwen 3.8 27B (`qwen/qwen3.8-27b`)
-- OpenRouter free-model router (`openrouter/free`)
+- Sarvam Saaras v4 STT in Telugu code-mix mode
+- Sarvam 105B Conversations (`sarvam-105b-conversations`) for natural multilingual dialogue and tool use
 - Sarvam Bulbul v3 TTS, Telugu output
 
-Providers without a key are skipped. If Gemini is rate-limited, the agent immediately tries the configured Groq models and then OpenRouter. Change the order or model IDs through `.env`; no code change is required.
+Set `SARVAM_CHAT_MODEL` in `.env.local` only if you want to change the Sarvam chat model. The default is the conversational model tuned for voice-agent workloads.
 
 ## 5. Install on a phone
 

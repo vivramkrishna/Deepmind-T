@@ -2,16 +2,13 @@ import { promises as fs } from "node:fs";
 import path from "node:path";
 
 export const MODEL_CATALOG = [
-  { id: "groq-gpt-oss", name: "Groq · GPT-OSS 120B", note: "Fast production default", key: "GROQ_API_KEY" },
-  { id: "gemini", name: "Gemini 3.7 Flash", note: "Strong Telugu and reasoning", key: "GOOGLE_API_KEY" },
-  { id: "groq-qwen", name: "Groq · Qwen 3.8 27B", note: "Fast multilingual fallback", key: "GROQ_API_KEY" },
-  { id: "openrouter", name: "OpenRouter Free", note: "Variable emergency fallback", key: "OPENROUTER_API_KEY" },
+  { id: "sarvam", name: "Sarvam · 105B Conversations", note: "Indic conversational model for voice shopping", key: "SARVAM_API_KEY" },
 ] as const;
 export type ModelId = typeof MODEL_CATALOG[number]["id"];
 export type ModelConfig = { order: ModelId[]; updatedAt: string };
 
 const CONFIG_FILE = path.join(process.cwd(), "data", "model-config.json");
-const DEFAULT_ORDER: ModelId[] = ["groq-gpt-oss", "gemini", "groq-qwen", "openrouter"];
+const DEFAULT_ORDER: ModelId[] = ["sarvam"];
 
 export async function getModelConfig(): Promise<ModelConfig> {
   try {

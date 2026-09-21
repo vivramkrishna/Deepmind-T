@@ -7,3 +7,6 @@ data/recordings/*
 !data/recordings/.gitkeep
 voice-agent/.venv
 voice-agent/__pycache__
+data/shop.db*
+tsconfig.tsbuildinfo
+voice-agent/:memory:.ses
