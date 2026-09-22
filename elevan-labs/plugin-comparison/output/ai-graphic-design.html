@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .teal-bg { background-color: #0d2e2e; }
+    .mint-text { color: #5ef3c0; }
+    .mint-bg { background-color: #5ef3c0; }
+    .dashed-line { border-top: 2px dashed #0d2e2e33; }
+    .arrow-right::after {
+      content: '';
+      position: absolute;
+      right: -2px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0; 
+      height: 0; 
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 8px solid currentColor;
+    }
+  </style>
+</head>
+<body>
+  <div class="w-[1500px] h-[1000px] overflow-hidden relative bg-white text-[#0d2e2e] flex flex-col" data-sd-id="1">
+    <!-- Header Section -->
+    <div class="pt-16 px-20 flex justify-between items-end mb-12" data-sd-id="2">
+      <div data-sd-id="3">
+        <h1 class="text-[6.5rem] leading-[0.85] font-bold tracking-tighter uppercase" data-sd-id="4">Voice Math:<br><span class="text-[#5ef3c0] bg-[#0d2e2e] px-4" data-sd-id="5">how it works</span></h1>
+      </div>
+      <div class="w-64 text-right mb-4" data-sd-id="6">
+        <p class="text-sm uppercase tracking-[0.2em] font-semibold opacity-50" data-sd-id="7">Plugin Architecture v1.0</p>
+        <p class="text-xs font-mono mt-1" data-sd-id="8">ElevenLabs + Local MathJS</p>
+      </div>
+    </div>
+
+    <!-- Main Content: Three Rows -->
+    <div class="flex-1 px-20 flex flex-col gap-8" data-sd-id="9">
+      
+      <!-- Row 01: Local Math -->
+      <div class="flex border-t-2 border-[#0d2e2e] pt-6 relative" data-sd-id="10">
+        <span class="text-4xl font-bold mr-12 w-12" data-sd-id="11">01</span>
+        <div class="flex-1 flex items-center justify-between" data-sd-id="12">
+          <div class="w-1/4" data-sd-id="13">
+            <h2 class="text-3xl font-bold uppercase mb-2" data-sd-id="14">Local Math</h2>
+            <p class="text-lg leading-snug opacity-80" data-sd-id="15">Chrome extension triggers browser app with selected text. Local Express server calculates using MathJS.</p>
+          </div>
+          <div class="flex-1 flex items-center justify-center gap-6 px-12" data-sd-id="16">
+            <div class="border-2 border-[#0d2e2e] p-4 text-center w-40 font-semibold" data-sd-id="17">Chrome Ext.</div>
+            <div class="text-[#0d2e2e] opacity-40" data-sd-id="18">→</div>
+            <div class="border-2 border-[#0d2e2e] p-4 text-center w-40 font-semibold" data-sd-id="19">Browser App</div>
+            <div class="text-[#0d2e2e] opacity-40" data-sd-id="20">→</div>
+            <div class="bg-[#0d2e2e] text-white p-4 text-center w-40 font-semibold" data-sd-id="21">Local API</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 02: Live Voice -->
+      <div class="flex border-t-2 border-[#0d2e2e] pt-6 relative" data-sd-id="22">
+        <span class="text-4xl font-bold mr-12 w-12" data-sd-id="23">02</span>
+        <div class="flex-1" data-sd-id="24">
+          <div class="flex items-start justify-between mb-8" data-sd-id="25">
+            <div class="w-1/4" data-sd-id="26">
+              <h2 class="text-3xl font-bold uppercase mb-2" data-sd-id="27">Live Voice</h2>
+              <p class="text-lg leading-snug opacity-80" data-sd-id="28">Bi-directional audio via ElevenLabs. Agent tools route back to local math API via browser.</p>
+            </div>
+            <!-- Complex Diagram -->
+            <div class="flex-1 flex flex-col relative py-4" data-sd-id="29">
+              <!-- Authorization Layer -->
+              <div class="flex items-center gap-4 mb-10 pl-16" data-sd-id="30">
+                <div class="text-xs font-bold uppercase tracking-wider text-white bg-[#0d2e2e] px-2 py-1" data-sd-id="31">Auth Flow</div>
+                <div class="text-xs font-medium border-b border-[#0d2e2e] pb-1" data-sd-id="32">Server requests Signed URL → Browser connects to WebSocket</div>
+              </div>
+              
+              <div class="flex items-center justify-between relative" data-sd-id="33">
+                <!-- Local Node -->
+                <div class="z-10 bg-white border-2 border-[#0d2e2e] p-6 w-56" data-sd-id="34">
+                  <div class="text-xs uppercase opacity-50 mb-1" data-sd-id="35">Client Side</div>
+                  <div class="font-bold text-xl" data-sd-id="36">Browser App</div>
+                  <div class="mt-4 text-[10px] leading-tight font-mono p-2 bg-gray-50 border border-black/10" data-sd-id="37">
+                    &gt; RECEIVE_AUDIO<br>
+                    &gt; EXEC_MATH_TOOL
+                  </div>
+                </div>
+
+                <!-- Flow Arrows -->
+                <div class="flex-1 flex flex-col items-center gap-12 relative" data-sd-id="38">
+                   <!-- WebSocket Audio -->
+                   <div class="w-full flex items-center justify-center relative" data-sd-id="39">
+                      <div class="absolute w-full h-px bg-[#0d2e2e]/20 top-1/2" data-sd-id="40"></div>
+                      <div class="bg-[#5ef3c0] text-[#0d2e2e] text-[10px] font-bold px-3 py-1 rounded-full z-10 uppercase tracking-tighter" data-sd-id="41">WebSocket: Audio &amp; Transcript</div>
+                   </div>
+                   
+                   <!-- Tool Logic Loop -->
+                   <div class="w-full flex items-center justify-center relative" data-sd-id="42">
+                      <div class="absolute w-full border-b-2 border-dashed border-[#0d2e2e] top-1/2" data-sd-id="43"></div>
+                      <div class="bg-white border border-[#0d2e2e] text-[10px] font-bold px-3 py-1 z-10 uppercase" data-sd-id="44">Tool Call: Local API Request</div>
+                   </div>
+                </div>
+
+                <!-- ElevenLabs Node -->
+                <div class="z-10 bg-[#0d2e2e] text-white p-6 w-56" data-sd-id="45">
+                  <div class="text-xs uppercase opacity-50 mb-1" data-sd-id="46">Cloud Service</div>
+                  <div class="font-bold text-xl" data-sd-id="47">ElevenLabs Agent</div>
+                  <div class="mt-4 text-[10px] leading-tight font-mono p-2 bg-white/10" data-sd-id="48">
+                    &gt; PROCESS_VOICE<br>
+                    &gt; CALL_CALCULATE
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 03: Automatic Setup -->
+      <div class="flex border-t-2 border-[#0d2e2e] pt-6 relative" data-sd-id="49">
+        <span class="text-4xl font-bold mr-12 w-12" data-sd-id="50">03</span>
+        <div class="flex-1 flex items-center justify-between" data-sd-id="51">
+          <div class="w-1/4" data-sd-id="52">
+            <h2 class="text-3xl font-bold uppercase mb-2" data-sd-id="53">Automatic Setup</h2>
+            <p class="text-lg leading-snug opacity-80" data-sd-id="54">Run setup script to create agent and store ID locally. No database required.</p>
+          </div>
+          <div class="flex-1 pl-12" data-sd-id="55">
+            <div class="bg-gray-100 p-8 flex justify-between items-center rounded-sm" data-sd-id="56">
+              <div data-sd-id="57">
+                <code class="text-sm font-mono text-red-600">npm run agent:setup</code>
+                <div class="text-xs mt-2 opacity-60" data-sd-id="58">Creates Agent → Saves to .agent-id</div>
+              </div>
+              <div class="text-right" data-sd-id="59">
+                <div class="inline-block bg-[#5ef3c0] px-4 py-2 font-bold uppercase text-xs tracking-widest" data-sd-id="60">Stateless Logic</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="h-32 bg-[#0d2e2e] text-white px-20 flex items-center justify-between" data-sd-id="61">
+      <div class="flex gap-16" data-sd-id="62">
+        <div data-sd-id="63">
+          <p class="text-[10px] uppercase tracking-widest opacity-50 mb-1" data-sd-id="64">Requirement</p>
+          <p class="text-xl font-medium" data-sd-id="65">You supply the API key.</p>
+        </div>
+        <div data-sd-id="66">
+          <p class="text-[10px] uppercase tracking-widest opacity-50 mb-1" data-sd-id="67">Storage</p>
+          <p class="text-xl font-medium" data-sd-id="68">Setup creates the agent ID.</p>
+        </div>
+      </div>
+      <div class="text-right" data-sd-id="69">
+        <div class="inline-block border border-[#5ef3c0] text-[#5ef3c0] px-4 py-1 text-xs uppercase tracking-widest" data-sd-id="70">Technical Architecture Diagram</div>
+      </div>
+    </div>
+
+    <!-- Abstract Background Pattern -->
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] pointer-events-none opacity-[0.03]" data-sd-id="71">
+      <svg viewBox="0 0 100 100" class="w-full h-full text-[#0d2e2e]" data-sd-id="72">
+        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="0.5"></circle>
+        <path d="M50 10 L50 90 M10 50 L90 50" stroke="currentColor" stroke-width="0.5"></path>
+        <circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="0.5"></circle>
+      </svg>
+    </div>
+  </div>
+
+</body></html>

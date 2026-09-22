@@ -1,0 +1,69 @@
+{"kind":"deck","id":"pr/fntxtf","name":"Deck"}
+{"kind":"layout","layoutId":"bf26d59f-5384-492d-8c47-8de05cf0b970","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"91c83312-f824-4892-bfe5-41a2222cc4e2","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/kj9aye","slide":1,"title":"PRESENTATIONS / VOICE MATH","textShapes":18}
+{"kind":"textbox","id":"sh/lg7il47m","slide":1,"text":"PRESENTATIONS / VOICE MATH","textPreview":"PRESENTATIONS / VOICE MATH","textChars":26,"textLines":1,"bbox":[72,38,1100,30]}
+{"kind":"textbox","id":"sh/ydwjqp8v","slide":1,"text":"Voice Math architecture","textPreview":"Voice Math architecture","textChars":23,"textLines":1,"bbox":[72,95,1120,96]}
+{"kind":"textbox","id":"sh/ze50ju9g","slide":1,"text":"Chrome extension","textPreview":"Chrome extension","textChars":16,"textLines":1,"bbox":[72,220,240,92]}
+{"kind":"textbox","id":"sh/cbe1ozqp","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[322,242,36,50]}
+{"kind":"textbox","id":"sh/xcnihkra","slide":1,"text":"Browser app","textPreview":"Browser app","textChars":11,"textLines":1,"bbox":[366,220,240,92]}
+{"kind":"textbox","id":"sh/apwjmp8z","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[616,242,36,50]}
+{"kind":"textbox","id":"sh/ba50fu94","slide":1,"text":"Local math API","textPreview":"Local math API","textChars":14,"textLines":1,"bbox":[660,220,240,92]}
+{"kind":"textbox","id":"sh/w7i10jq9","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[910,242,36,50]}
+{"kind":"textbox","id":"sh/h8r2to7e","slide":1,"text":"Answer in app","textPreview":"Answer in app","textChars":13,"textLines":1,"bbox":[954,220,240,92]}
+{"kind":"textbox","id":"sh/dgbqpsbu","slide":1,"text":"Browser app","textPreview":"Browser app","textChars":11,"textLines":1,"bbox":[72,375,240,92]}
+{"kind":"textbox","id":"sh/cf2pgnu9","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[322,397,36,50]}
+{"kind":"textbox","id":"sh/re98nito","slide":1,"text":"Session endpoint","textPreview":"Session endpoint","textChars":16,"textLines":1,"bbox":[366,375,240,92]}
+{"kind":"textbox","id":"sh/qd07exc3","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[616,397,36,50]}
+{"kind":"textbox","id":"sh/psrqlsby","slide":1,"text":"ElevenLabs API","textPreview":"ElevenLabs API","textChars":14,"textLines":1,"bbox":[660,375,240,92]}
+{"kind":"textbox","id":"sh/4ripcnud","slide":1,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[910,397,36,50]}
+{"kind":"textbox","id":"sh/3q98jits","slide":1,"text":"Signed URL","textPreview":"Signed URL","textChars":10,"textLines":1,"bbox":[954,375,240,92]}
+{"kind":"textbox","id":"sh/2p07adc7","slide":1,"text":"Live audio travels directly between the browser and ElevenLabs.","textPreview":"Live audio travels directly between the browser and ElevenLabs.","textChars":63,"textLines":1,"bbox":[72,570,1120,78]}
+{"kind":"textbox","id":"sh/9ovqxcb2","slide":1,"text":"1 / 4","textPreview":"1 / 4","textChars":5,"textLines":1,"bbox":[1120,665,90,25]}
+{"kind":"notes","id":"nt/kj9aye","slide":1,"text":"The Chrome extension opens the app with selected text. Without a live session, text uses local mathjs. The server obtains a signed URL using the API key and agent ID. Source: elevan-labs/src/main.js; server/index.js; extension/background.js; scripts/create-agent.js."}
+{"kind":"slide","id":"sl/8886t4","slide":2,"title":"PRESENTATIONS / VOICE MATH","textShapes":18}
+{"kind":"textbox","id":"sh/ofqhof29","slide":2,"text":"PRESENTATIONS / VOICE MATH","textPreview":"PRESENTATIONS / VOICE MATH","textChars":26,"textLines":1,"bbox":[72,38,1100,30]}
+{"kind":"textbox","id":"sh/nehgvalo","slide":2,"text":"Live voice and calculator calls","textPreview":"Live voice and calculator calls","textChars":31,"textLines":1,"bbox":[72,95,1120,96]}
+{"kind":"textbox","id":"sh/2t8zm5k3","slide":2,"text":"Microphone","textPreview":"Microphone","textChars":10,"textLines":1,"bbox":[72,200,240,92]}
+{"kind":"textbox","id":"sh/1szyt03i","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[322,222,36,50]}
+{"kind":"textbox","id":"sh/0rqhkv2x","slide":2,"text":"Browser SDK","textPreview":"Browser SDK","textChars":11,"textLines":1,"bbox":[366,200,240,92]}
+{"kind":"textbox","id":"sh/fqhgralc","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[616,222,36,50]}
+{"kind":"textbox","id":"sh/ep8fi5k7","slide":2,"text":"ElevenLabs agent","textPreview":"ElevenLabs agent","textChars":16,"textLines":1,"bbox":[660,200,240,92]}
+{"kind":"textbox","id":"sh/dofyp03m","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[910,222,36,50]}
+{"kind":"textbox","id":"sh/sn6xgv21","slide":2,"text":"Spoken response","textPreview":"Spoken response","textChars":15,"textLines":1,"bbox":[954,200,240,92]}
+{"kind":"textbox","id":"sh/ml4jet4v","slide":2,"text":"Agent tool call","textPreview":"Agent tool call","textChars":15,"textLines":1,"bbox":[72,375,240,92]}
+{"kind":"textbox","id":"sh/n6d07ylg","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[322,397,36,50]}
+{"kind":"textbox","id":"sh/87m1g3m1","slide":2,"text":"Browser callback","textPreview":"Browser callback","textChars":16,"textLines":1,"bbox":[366,375,240,92]}
+{"kind":"textbox","id":"sh/98f2983m","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[616,397,36,50]}
+{"kind":"textbox","id":"sh/yh4ja94z","slide":2,"text":"Local math API","textPreview":"Local math API","textChars":14,"textLines":1,"bbox":[660,375,240,92]}
+{"kind":"textbox","id":"sh/zid03elk","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[910,397,36,50]}
+{"kind":"textbox","id":"sh/0jm1cjm5","slide":2,"text":"Result to agent","textPreview":"Result to agent","textChars":15,"textLines":1,"bbox":[954,375,240,92]}
+{"kind":"textbox","id":"sh/lkvi5o3a","slide":2,"text":"The calculator runs locally; the conversation runs in ElevenLabs.","textPreview":"The calculator runs locally; the conversation runs in ElevenLabs.","textChars":65,"textLines":1,"bbox":[72,570,1120,78]}
+{"kind":"textbox","id":"sh/qdkj694n","slide":2,"text":"2 / 4","textPreview":"2 / 4","textChars":5,"textLines":1,"bbox":[1120,665,90,25]}
+{"kind":"notes","id":"nt/8886t4","slide":2,"text":"The SDK uses a WebSocket connection. The calculate client tool calls POST /api/calculate; the SDK returns its result to the agent. The lower row summarizes the return via the browser. Source: elevan-labs/src/main.js; server/index.js; extension/background.js; scripts/create-agent.js."}
+{"kind":"slide","id":"sl/y894hb","slide":3,"title":"PRESENTATIONS / VOICE MATH","textShapes":11}
+{"kind":"textbox","id":"sh/cvut0fix","slide":3,"text":"PRESENTATIONS / VOICE MATH","textPreview":"PRESENTATIONS / VOICE MATH","textChars":26,"textLines":1,"bbox":[72,38,1100,30]}
+{"kind":"textbox","id":"sh/buls7ahc","slide":3,"text":"An API key creates the agent ID","textPreview":"An API key creates the agent ID","textChars":31,"textLines":1,"bbox":[72,95,1120,96]}
+{"kind":"textbox","id":"sh/qtcby50r","slide":3,"text":"API key in .env","textPreview":"API key in .env","textChars":15,"textLines":1,"bbox":[72,245,240,92]}
+{"kind":"textbox","id":"sh/psja50z6","slide":3,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[322,267,36,50]}
+{"kind":"textbox","id":"sh/oratwvil","slide":3,"text":"agent:setup script","textPreview":"agent:setup script","textChars":18,"textLines":1,"bbox":[366,245,240,92]}
+{"kind":"textbox","id":"sh/3q1s3qh0","slide":3,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[616,267,36,50]}
+{"kind":"textbox","id":"sh/2psbul0f","slide":3,"text":"Create agent API","textPreview":"Create agent API","textChars":16,"textLines":1,"bbox":[660,245,240,92]}
+{"kind":"textbox","id":"sh/1oja10za","slide":3,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[910,267,36,50]}
+{"kind":"textbox","id":"sh/g3atsvip","slide":3,"text":"Save .agent-id","textPreview":"Save .agent-id","textChars":14,"textLines":1,"bbox":[954,245,240,92]}
+{"kind":"textbox","id":"sh/ihwzutw7","slide":3,"text":"You supply the API key. The setup command saves the agent ID.","textPreview":"You supply the API key. The setup command saves the agent ID.","textChars":61,"textLines":1,"bbox":[72,570,1120,78]}
+{"kind":"textbox","id":"sh/ji5g3yds","slide":3,"text":"3 / 4","textPreview":"3 / 4","textChars":5,"textLines":1,"bbox":[1120,665,90,25]}
+{"kind":"notes","id":"nt/y894hb","slide":3,"text":"The saved agent ID is required internally. An explicit configured ID takes priority over the saved file. Restart the app after creating the agent. No actual secret values are included in this diagram. Source: elevan-labs/src/main.js; server/index.js; extension/background.js; scripts/create-agent.js."}
+{"kind":"slide","id":"sl/d8w8up","slide":4,"title":"PRESENTATIONS / VOICE MATH","textShapes":11}
+{"kind":"textbox","id":"sh/0vyh8b29","slide":4,"text":"PRESENTATIONS / VOICE MATH","textPreview":"PRESENTATIONS / VOICE MATH","textChars":26,"textLines":1,"bbox":[72,38,1100,30]}
+{"kind":"textbox","id":"sh/zapgz6lo","slide":4,"text":"Demo math needs no credentials","textPreview":"Demo math needs no credentials","textChars":30,"textLines":1,"bbox":[72,95,1120,96]}
+{"kind":"textbox","id":"sh/y9wz61k3","slide":4,"text":"Select or type","textPreview":"Select or type","textChars":14,"textLines":1,"bbox":[72,230,240,92]}
+{"kind":"textbox","id":"sh/907i5g3q","slide":4,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[322,252,36,50]}
+{"kind":"textbox","id":"sh/8zyhcb25","slide":4,"text":"Browser app","textPreview":"Browser app","textChars":11,"textLines":1,"bbox":[366,230,240,92]}
+{"kind":"textbox","id":"sh/nypg36lk","slide":4,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[616,252,36,50]}
+{"kind":"textbox","id":"sh/mxgzalkf","slide":4,"text":"Express + mathjs","textPreview":"Express + mathjs","textChars":16,"textLines":1,"bbox":[660,230,240,92]}
+{"kind":"textbox","id":"sh/p4nytw3m","slide":4,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[910,252,36,50]}
+{"kind":"textbox","id":"sh/o3eh0r21","slide":4,"text":"Show answer","textPreview":"Show answer","textChars":11,"textLines":1,"bbox":[954,230,240,92]}
+{"kind":"textbox","id":"sh/29cf650z","slide":4,"text":"Example: 15% of 200 = 30","textPreview":"Example: 15% of 200 = 30","textChars":24,"textLines":1,"bbox":[72,570,1120,78]}
+{"kind":"textbox","id":"sh/3algzahk","slide":4,"text":"4 / 4","textPreview":"4 / 4","textChars":5,"textLines":1,"bbox":[1120,665,90,25]}
+{"kind":"notes","id":"nt/d8w8up","slide":4,"text":"The extension passes selected text through a URL parameter. The app submits it to POST /api/calculate. Live voice remains disabled until both key and agent ID are configured. Source: elevan-labs/src/main.js; server/index.js; extension/background.js; scripts/create-agent.js."}
