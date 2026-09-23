@@ -22,6 +22,7 @@
     "postgres": "^3.4.9",
     "react": "latest",
     "react-dom": "latest",
+    "twilio": "^6.1.1",
     "zod": "latest"
   },
   "devDependencies": {

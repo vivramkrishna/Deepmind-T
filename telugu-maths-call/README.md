@@ -98,6 +98,30 @@ The phone must access the app through HTTPS for microphone and PWA installation 
 
 For local phone testing, expose the development server through a temporary HTTPS tunnel. Cloudflare Tunnel is a good option; deployment can later move to Render, Cloudflare, or another Node-compatible host.
 
+## Twilio phone integration
+
+Incoming Twilio calls use bidirectional Media Streams through the LiveKit Cloud
+Twilio Connector. Twilio remains the phone transport; the existing
+`mana-mart-assistant` worker retains the prompts, model selection, inventory
+tools, cart, and order logic.
+
+1. Add `TWILIO_ACCOUNT_SID`, `TWILIO_AUTH_TOKEN`, and `TWILIO_PHONE_NUMBER` to
+   `.env.local`.
+2. Run the web app and expose port 3000 through a public HTTPS tunnel.
+3. Set `TWILIO_VOICE_WEBHOOK_URL` to the exact public URL ending in
+   `/api/twilio/voice`, then restart the web app.
+4. In Twilio, configure the number's **A call comes in** webhook to that URL
+   using `POST`.
+5. Optionally configure the status callback as `/api/twilio/status` using
+   `POST`.
+6. Start the existing voice worker with `python agent.py dev`, then call the
+   Twilio number.
+
+Both endpoints validate `X-Twilio-Signature`. The voice webhook asks LiveKit to
+create one room per phone call, dispatches the existing agent, and returns the
+connector's secure WebSocket URL in `<Connect><Stream>` TwiML. No prompts or
+business rules are stored in Twilio.
+
 ## Storage behavior
 
 This first local build stores structured conversations in `data/conversations.json` and uploaded browser recordings in `data/recordings/`. The browser recording contains the student's microphone audio. LiveKit Cloud Agent Insights can provide full-session agent recordings when recording is enabled for the project.
