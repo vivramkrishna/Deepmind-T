@@ -117,6 +117,11 @@ tools, cart, and order logic.
 6. Start the existing voice worker with `python agent.py dev`, then call the
    Twilio number.
 
+The authenticated admin dashboard also includes a **Call me** button. It calls
+only the fixed `TWILIO_CALL_ME_NUMBER` configured on the server, so browser
+users cannot supply arbitrary destinations. Trial accounts require this number
+to be verified in Twilio first.
+
 Both endpoints validate `X-Twilio-Signature`. The voice webhook asks LiveKit to
 create one room per phone call, dispatches the existing agent, and returns the
 connector's secure WebSocket URL in `<Connect><Stream>` TwiML. No prompts or
